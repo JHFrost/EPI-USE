@@ -1,18 +1,20 @@
+package main.java.employee;
+
 import java.util.Date;
 import java.lang.Comparable;
 
-abstract class Staff implements Comparable<Staff>{
+abstract public class Staff implements Comparable<Staff>{
     private String name;
     private String surname;
     private Date birthDate;
     private int employeeNumber;
     private float salary;
-    private string roleDesignation;
-    private Employee senior;
+    private String roleDesignation;
+    private Staff senior;
 
-    public abstract void printDetails();
+    abstract public void printDetails();
 
-    Staff(String name, String surname, Date birthDate, int employeeNumber, float salary, String roleDesignation, Employee senior){
+    public Staff(String name, String surname, Date birthDate, int employeeNumber, float salary, String roleDesignation, Staff senior){
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -42,11 +44,11 @@ abstract class Staff implements Comparable<Staff>{
         return salary;
     }
 
-    public string getRoleDesignation() {
+    public String getRoleDesignation() {
         return roleDesignation;
     }
 
-    public Employee getSenior() {
+    public Staff getSenior() {
         return senior;
     }
 
@@ -54,11 +56,20 @@ abstract class Staff implements Comparable<Staff>{
         this.salary = salary;
     }
 
-    public void setSenior(Employee senior) {
+    public void setSenior(Staff senior) {
         this.senior = senior;
     }
 
-    public void setRoleDesignation(string roleDesignation) {
+    public void setRoleDesignation(String roleDesignation) {
         this.roleDesignation = roleDesignation;
+    }
+
+    public int compareTo(Staff o) {
+        if (this.salary < o.salary)
+            return 1;
+        else if (this.salary > o.salary)
+            return -1;
+        else
+            return 0;
     }
 }

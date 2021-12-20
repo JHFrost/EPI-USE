@@ -1,0 +1,5 @@
+John,Smith,27-12-1963,0000,700000,Manager,-1
+Jane,Doe,12-06-1985,0001,600000,Employee,0000
+Jim,Bean,10-10-1980,0002,650000,Employee,0001
+Roger,Wilco,22-02-1999,0003,190000,Trainee,0002
+Susan,Roe,30-05-2000,0004,250000,Trainee,0002
